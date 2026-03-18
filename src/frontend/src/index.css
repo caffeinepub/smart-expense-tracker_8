@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+    /* Dark theme only */
+    --background: 0.13 0.025 240;
+    --foreground: 0.93 0.01 230;
+    --card: 0.18 0.02 240;
+    --card-foreground: 0.93 0.01 230;
+    --popover: 0.2 0.025 240;
+    --popover-foreground: 0.93 0.01 230;
+    --primary: 0.78 0.15 168;
+    --primary-foreground: 0.1 0.02 240;
+    --secondary: 0.22 0.02 240;
+    --secondary-foreground: 0.85 0.01 230;
+    --muted: 0.22 0.02 240;
+    --muted-foreground: 0.6 0.02 230;
+    --accent: 0.78 0.15 168;
+    --accent-foreground: 0.1 0.02 240;
+    --destructive: 0.65 0.22 25;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.3 0.015 240;
+    --input: 0.25 0.02 240;
+    --ring: 0.78 0.15 168;
+    --chart-1: 0.78 0.15 168;
+    --chart-2: 0.72 0.18 50;
+    --chart-3: 0.8 0.17 85;
+    --chart-4: 0.72 0.12 200;
+    --chart-5: 0.6 0.08 240;
+    --sidebar: 0.16 0.022 240;
+    --sidebar-foreground: 0.93 0.01 230;
+    --sidebar-primary: 0.78 0.15 168;
+    --sidebar-primary-foreground: 0.1 0.02 240;
+    --sidebar-accent: 0.22 0.02 240;
+    --sidebar-accent-foreground: 0.85 0.01 230;
+    --sidebar-border: 0.3 0.015 240;
+    --sidebar-ring: 0.78 0.15 168;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    background: radial-gradient(
+        ellipse at 20% 20%,
+        oklch(0.2 0.06 168 / 0.35) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 80%,
+        oklch(0.18 0.04 200 / 0.25) 0%,
+        transparent 50%
+      ), linear-gradient(160deg, #0b1220 0%, #0f1a2a 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-card-accent {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(47, 230, 184, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 30px oklch(0.78 0.15 168 / 0.15), 0 4px 16px
+      rgba(0, 0, 0, 0.3);
+  }
+
+  .text-income {
+    color: #33e2b0;
+  }
+
+  .text-expense {
+    color: #ff6b6b;
+  }
+
+  .teal-gradient {
+    background: linear-gradient(135deg, #2fe6b8 0%, #25cfa0 100%);
+  }
+
+  .nav-active {
+    color: #2fe6b8;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
